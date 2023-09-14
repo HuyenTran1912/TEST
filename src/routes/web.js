@@ -5,7 +5,7 @@ const router = express.Router(); /** định nghĩa biến, thằng express có 
 
 const initWebRoutes = (application) => {
     router.get("/", (req, res) => {
-        return res.send("hello world");
+        return res.send("hello world 78977899");
     })
     router.get("/about", (req, res) => {
         return res.send("my name is tran");
