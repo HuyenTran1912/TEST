@@ -1,0 +1,1 @@
+/** định nghĩa api trả về cho phía react*/
