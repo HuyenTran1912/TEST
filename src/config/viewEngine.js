@@ -7,7 +7,7 @@ import express from "express";
 const configViewEngine = (app)  => {
     app.use(express.static('./src/public'));
     app.set("view engine", "ejs"); /**định nghĩa view engine, tao dùng cái view engine có tên là ejs, nghĩa là dùng công nghệ gì để viết html */
-    app.set("view", "./src/views");/** định nghĩa nơi lưu trữ file */
+    app.set("views", "./src/views");/** định nghĩa nơi lưu trữ file */
 
 
 }

@@ -1,16 +1,21 @@
 /** file điều hướng viết ở đây */
 import express from "express";
+import homeController from '../controller/HomeController';
 
 const router = express.Router(); /** định nghĩa biến, thằng express có 1 hàm là router*/
 
+
+const handleHelloWorld = (req, res) => {
+    return res.send ("Hello World");
+}
+
 const initWebRoutes = (application) => {
-    router.get("/", (req, res) => {
-        return res.send("hello world 78977899");
-    })
-    router.get("/about", (req, res) => {
-        return res.send("my name is tran");
-    })
-    return application.use("/MYWEBSITE", router)
+    router.get("/", homeController.handleHelloWorld); 
+    router.get("/user", homeController.handleUserPage); 
+    
+    
+
+    return application.use("/", router)
 }
 
 export default initWebRoutes;
