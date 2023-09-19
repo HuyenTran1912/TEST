@@ -11,7 +11,9 @@ const handleHelloWorld = (req, res) => {
 
 const initWebRoutes = (application) => {
     router.get("/", homeController.handleHelloWorld); 
-    router.get("/user", homeController.handleUserPage); 
+    router.get("/user", homeController.handleUserPage);
+    router.post("/users/create-user", homeController.handleCreateNewUser)
+   
     
     
 
