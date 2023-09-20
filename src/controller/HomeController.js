@@ -1,14 +1,4 @@
-import mysql from 'mysql2';
-
-// create the connection to database
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'jwt',
-  port: 3310
-});
-
-
+import userService from '../service/userService';
 
 
 
@@ -23,15 +13,16 @@ const handleUserPage = (req, res) => {
 const handleCreateNewUser = (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
-    let usename = req.body.usename;
+    let username = req.body.username;
 
-    connection.query(
-        'SELECT * FROM users' ,
-        function(err, results, fields) {
-          console.log(results); // results contains rows returned by server
-          console.log(fields); // fields contains extra meta data about results, if available
-        }
-      );
+
+     userService.createNewUser(email, password, username);
+
+    
+    
+
+
+    userService.getUserList();
     return res.send("handleCreateNewUser");
 }
 
@@ -40,3 +31,6 @@ module.exports = {
     handleUserPage,
     handleCreateNewUser
 }
+
+
+
